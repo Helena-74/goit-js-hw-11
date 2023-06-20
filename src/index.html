@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +7,23 @@
     <title>Homework 11</title>
   </head>
   <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
-
-    <script src="js/cat-api.js" type="module"></script>
+    <header>
+      <h1>Image Search</h1>
+    </header>
+  
+    <main>
+      <form class="search-form" id="search-form">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button type="submit">Search</button>
+      </form>
+  
+      <div class="gallery">
+        <!-- Images will be dynamically added here -->
+      </div>
+  
+      <button type="button" class="load-more">Load more</button>
+    </main>
+  
+    <script src="index.js"></script>
   </body>
 </html>
