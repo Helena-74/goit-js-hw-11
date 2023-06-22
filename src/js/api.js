@@ -18,7 +18,7 @@ form.addEventListener('submit', async (event) => {
   try {
     const response = await axios.get('https://pixabay.com/api/', {
       params: {
-        key: 'YOUR_API_KEY',
+        key: '37685879-75fb45f515a39c48fce6291c7',
         q: searchQuery,
         image_type: 'photo',
         orientation: 'horizontal',
@@ -51,7 +51,7 @@ function renderGallery(images) {
     gallery.appendChild(photoCard);
   });
 
-  // Ініціалізувати SimpleLightbox
+
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionPosition: 'bottom',
@@ -100,7 +100,7 @@ loadMoreButton.addEventListener('click', async () => {
   try {
     const response = await axios.get('https://pixabay.com/api/', {
       params: {
-        key: 'YOUR_API_KEY',
+        key: '37685879-75fb45f515a39c48fce6291c7',
         q: searchQuery,
         image_type: 'photo',
         orientation: 'horizontal',
@@ -120,7 +120,6 @@ loadMoreButton.addEventListener('click', async () => {
 
     renderGallery(images);
 
-    // Scroll to the newly added images
     const { height: cardHeight } = document.querySelector('.gallery').firstElementChild.getBoundingClientRect();
     window.scrollBy({
       top: cardHeight * 2,
@@ -131,3 +130,4 @@ loadMoreButton.addEventListener('click', async () => {
     Notiflix.Notify.failure('An error occurred while fetching images. Please try again later.');
   }
 });
+
