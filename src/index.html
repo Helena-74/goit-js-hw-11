@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-< lang="en">
+<lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,20 +10,18 @@
     <header>
       <h1>Image Search</h1>
     </header>
-  
+
     <main>
       <form class="search-form" id="search-form">
         <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
         <button type="submit">Search</button>
       </form>
-  
-      <div class="gallery">
-        <!-- Images will be dynamically added here -->
+
+      <div class="gallery" id="gallery">
       </div>
-  
-      <button type="button" class="load-more">Load more</button>
+
+      <button type="button" class="load-more" id="load-more" style="display: none;">Load more</button>
     </main>
-  
     <script src="js/api.js" type="module"></script>
   </body>
 </html>
