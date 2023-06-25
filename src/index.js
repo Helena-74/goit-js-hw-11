@@ -158,49 +158,49 @@ function resetSearch() {
   totalHits = 0;
 }
 
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+// form.addEventListener('submit', async (event) => {
+//   event.preventDefault();
 
-  resetGallery();
-  resetSearch();
-  hideLoadMoreButton();
+//   resetGallery();
+//   resetSearch();
+//   hideLoadMoreButton();
 
-  const searchInput = document.querySelector('input[name="searchQuery"]');
-  searchQuery = searchInput.value.trim();
+//   const searchInput = document.querySelector('input[name="searchQuery"]');
+//   searchQuery = searchInput.value.trim();
 
-  if (searchQuery === '') {
-    return;
-  }
+//   if (searchQuery === '') {
+//     return;
+//   }
 
-  currentPage = 1;
+//   currentPage = 1;
 
-  try {
-    const response = await axios.get('https://pixabay.com/api/', {
-      params: {
-        key: '37685879-75fb45f515a39c48fce6291c7',
-        q: searchQuery,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: true,
-        page: currentPage,
-        per_page: 40,
-      },
-    });
+//   try {
+//     const response = await axios.get('https://pixabay.com/api/', {
+//       params: {
+//         key: '37685879-75fb45f515a39c48fce6291c7',
+//         q: searchQuery,
+//         image_type: 'photo',
+//         orientation: 'horizontal',
+//         safesearch: true,
+//         page: currentPage,
+//         per_page: 40,
+//       },
+//     });
 
-    const { hits, totalHits} = response.data;
+//     const { hits, totalHits} = response.data;
 
 
-    if (hits.length === 0) {
-      Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-      return;
-    }
+//     if (hits.length === 0) {
+//       Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+//       return;
+//     }
 
-    renderGallery(hits);
-    lightbox.refresh();
-    Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
-    showLoadMoreButton();
-  } catch (error) {
-    console.log(error);
-    Notiflix.Notify.failure('An error occurred while fetching images. Please try again later.');
-  }
-});
+//     renderGallery(hits);
+//     lightbox.refresh();
+//     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
+//     showLoadMoreButton();
+//   } catch (error) {
+//     console.log(error);
+//     Notiflix.Notify.failure('An error occurred while fetching images. Please try again later.');
+//   }
+// });
